@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "com-rating": "/components/rating/rating"
+    },
+    "navigationBarTitleText": "问卷调查"
+}

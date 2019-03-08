@@ -1,0 +1,11 @@
+<!--components/rating/rating.wxml-->
+<view class='com-rating'>
+    <view class='rating-icon' wx:for='{{[1,2,3,4,5]}}' wx:key='*this' bindtap='_handleTap' data-num='{{item}}'>
+        <view class='rating-on' style='width:{{rating >= (max/5)*item ? 2 : rating < (max/5)*(item-1) ? 0 : (rating*10)%(max/5*10)/(max/5*10)}}em'>
+            <image src='../../images/star_on.png' mode='widthFix' style='width:50rpx' />
+        </view>
+        <view class='rating-off' style='width:50rpx'>
+            <image src='../../images/star_off.png' mode='widthFix' style='width:50rpx' />
+        </view>
+    </view>
+</view>

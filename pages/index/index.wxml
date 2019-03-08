@@ -1,0 +1,85 @@
+<!--index.wxml-->
+<view class='indexPage'>
+    <view class='topContanier'>
+        <view class='title'>
+            美食大王问卷调查
+        </view>
+        <view class='desc'>感谢您能抽出几分钟时间来参加本次答题，现在我们就马上开始吧！</view>
+    </view>
+    <!-- 单选题 -->
+    <view class='questionBox'>
+        <view class='secondTitle'>1. 请选择您最爱吃的一种蔬菜(单选)</view>
+        <view class="tui-content">
+            <radio-group class="radio-group" bindchange="radioChange">
+                <label class="radio" wx:for="{{items}}">
+                    <view class="tui-menu-list">
+                        <radio color="" value="{{item.name}}" data-checked='{{item.checked}}' checked="{{item.checked}}" bindtap='ss' />
+                        <text class='name'><text class='num'>{{item.num}}.</text> {{item.value}}</text>
+                    </view>
+                </label>
+            </radio-group>
+        </view>
+
+    </view>
+    <!-- 多选题 -->
+    <view class='questionBox'>
+        <view class='secondTitle'>2. 请选择您最喜欢的城市(多选)</view>
+        <view class="tui-content">
+            <checkbox-group class="checkbox-group" bindchange="checkBoxChange">
+                <label class="check" wx:for="{{itemsHobby}}">
+                    <view class="tui-menu-list">
+                        <checkbox color="" value="{{item.name}}" data-checked='{{item.checked}}' checked="{{item.checked}}" bindtap='ss' />
+                        <text class='name'><text class='num'>{{item.num}}.</text> {{item.value}}</text>
+                    </view>
+                </label>
+            </checkbox-group>
+        </view>
+    </view>
+    <!-- 填写题 -->
+    <view class='questionBox'>
+        <view class='secondTitle noBorder'>3. 请留下您宝贵的意见或建议(内容填写)</view>
+        <view class='inputView'>
+            <textarea bindblur="bindTextAreaBlur" maxlength="100" fixed="{{fix}}" auto-height placeholder="请输入..." />
+            <text class='fontNum'>0/100</text>
+        </view>
+    </view>
+    <!-- 打分题 -->
+    <view class='questionBox'>
+        <view class='secondTitle'>4. 请评价我们的服务(等级评价)</view>
+        <view class='secondTitle'>
+            <com-rating max="10" rating='6' bindchange='handleChange' />
+        </view>
+    </view>
+
+    <!-- 打分题 -->
+    <view class='questionBox'>
+        <view class='secondTitle'>5. 推荐值等级如下，请选择(NPS)</view>
+        <view class='npsBox'>
+            <view class='npsBorder flex-wrap {{item.checked==true?"npsClick":"npsBorder"}}' wx:for="{{npsLists}}" data-value="{{item.value}}" bindtap='changeNum'>{{item.num}}</view>
+        </view>
+        <view class='recommand flex-x'>
+            <text>0：不可能</text>
+            <text>10：极不可能</text>
+        </view>
+    </view>
+
+    <!-- 提交问卷 -->
+    <view class='questionBox footer' bindtap='submitBtn'>
+        <image class='submit' src="../../images/btn_02.png"></image>
+    </view>
+
+    <!-- 模态框 -->
+    <view class="commonMask" wx:if="{{showMask}}">
+        <view class='alertContent'>
+            <view class='alertList'>
+                <image class='rightIcon' src='../../images/icon_01.png'></image>
+                <view class='success'>提交成功</view>
+                <view class='alertTitle f28'>感谢您的参与与回答！</view>
+                <view class='content f24'>
+                    <view class='p20'>-您可以获得以下优惠券-</view>
+                    <image class='couponPic' src="../../images/quan.png" bindtap='receiveBtn'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,67 @@
+/**app.wxss**/
+
+.container {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.flex-x {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.f28 {
+    font-size: 28rpx;
+}
+
+.f24 {
+    font-size: 24rpx;
+}
+
+/* 模态框 */
+
+.commonMask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+}
+
+.alertContent {
+    position: fixed;
+    top: 320rpx;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 9999;
+}
+
+.alertList {
+    margin: 95rpx;
+    height: 595rpx;
+    padding: 30rpx;
+    font-size: 30rpx;
+    border-radius: 15rpx;
+    color: #757474;
+    text-align: center;
+    background-color: #fff;
+}
+
+.alertTitle {
+    text-align: center;
+    border-bottom: 2rpx solid #ddd;
+    padding-bottom: 20rpx; 
+}
+
+

@@ -1,0 +1,8 @@
+<!--pages/login/login.wxml-->
+<view class='loading'>
+    <image class='loading-gongfu' src="../../images/bg.png"></image>
+    <button class='loginBtn' open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>
+        <image class='goBtn' src="../../images/btn_01.png"></image>
+    </button>
+</view>
+

@@ -1,0 +1,24 @@
+/* components/rating/rating.wxss */
+.com-rating {
+  display: inline-block;
+  letter-spacing: 3rpx;
+  position: relative;
+}
+.com-rating .rating-icon,
+.com-rating .rating-on,
+.com-rating .rating-off {
+  display: inline-block;
+}
+.com-rating .rating-icon:not(:last-child) {
+  margin-right: 10rpx;
+}
+.com-rating .rating-on {
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+.com-rating .rating-off {
+  padding: 0;
+  margin: 0;
+}
